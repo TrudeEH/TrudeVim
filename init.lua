@@ -2,9 +2,7 @@
 -- TODO:
 -- Config LSP
 -- Null-LS, Linting, etc...
--- Fix bug: Not opening NvimTree when launching as "neovim ."
--- Shortcuts sheat sheet (use Which Key, maybe swap with another?)
--- Add a home screen
+-- Fix nvim . bug
 
 -- NOTE: Buffer is a file loaded in memory. Windows cointain a buffer (split the editor). A tab is another group of windows/buffers.
 
@@ -50,6 +48,7 @@ require('lazy').setup({
   'JoosepAlviste/nvim-ts-context-commentstring', -- Change comment type for JS files
 
   'kyazdani42/nvim-web-devicons', -- Icons for Nvim Tree
+
   'kyazdani42/nvim-tree.lua', -- Custom File Explorer
 
   'akinsho/bufferline.nvim', -- Top bar for buffers (Buffer = file loaded in memory)
@@ -93,6 +92,43 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
     },
+  },
+
+  {
+    'glepnir/dashboard-nvim', -- Home Screen
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        theme = 'hyper',
+        config = {
+          week_header = {
+            enable = true,
+          },
+          project = { enable = false, },
+          footer = {},
+          shortcut = {
+            { desc = ' Update', group = '@property', action = 'Lazy update', key = 'u' },
+            {
+              icon = ' ',
+              icon_hl = '@variable',
+              desc = 'Find Files',
+              group = 'Label',
+              action = 'Telescope find_files',
+              key = 'f',
+            },
+            {
+              icon = ' ',
+              icon_hl = '@variable',
+              desc = 'Browse Keymaps',
+              group = 'Label',
+              action = 'Telescope keymaps',
+              key = 'k',
+            },
+          },
+        },
+      }
+    end,
+    dependencies = {}
   },
 
   { -- Color Theme
@@ -198,12 +234,8 @@ require('lazy').setup({
 vim.o.backup = false            -- creates a backup file
 vim.o.conceallevel = 0          -- so that `` is visible in markdown files
 vim.o.pumheight = 10            -- pop up menu height
--- CHANGE THIS LATER
-vim.o.showmode = true           -- we don't need to see things like -- INSERT -- anymore
 vim.o.showtabline = 2           -- always show tabs
 vim.o.smartindent = true        -- make indenting smarter again
-vim.o.splitbelow = true         -- force all hori  ntal splits to go below current window
-vim.o.splitright = true         -- force all vertical splits to go to the right of current window
 vim.o.hlsearch = true           -- Set highlight on search
 vim.o.writebackup = false       -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 vim.wo.number = true            -- Make line numbers default
@@ -214,12 +246,10 @@ vim.o.breakindent = true        -- Enable break indent
 vim.o.undofile = true           -- Save undo history
 vim.o.ignorecase = true         -- Case insensitive searching UNLESS /C or capital in search
 vim.o.smartcase = true
-vim.wo.signcolumn = 'yes'       -- Keep signcolumn on by default
 vim.o.shiftwidth = 2            -- the number of spaces inserted for each indentation
 vim.o.tabstop = 2               -- insert 2 spaces for a tab
 vim.o.cursorline = true         -- highlight the current line
 vim.o.relativenumber = true     -- set relative numbered lines
-vim.o.wrap = false              -- display lines as one long line
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
 vim.o.guifont = "FiraCode Nerd Font"
@@ -238,7 +268,6 @@ vim.o.termguicolors = true -- NOTE: You should make sure your terminal supports 
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Press jk fast to enter Normal mode from Insert
 vim.keymap.set("i", "jk", "<ESC>", opts)
@@ -367,7 +396,7 @@ telescope.setup {
 
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
-  ensure_installed = "all",
+  ensure_installed = {'c', 'lua', 'vim', 'help', 'bash', 'css', 'diff', 'html', 'javascript', 'json', 'markdown', 'scss', 'typescript', 'vue', 'yaml', 'python'},
   sync_install = false, 
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = { enable = true, },
@@ -923,7 +952,6 @@ local htop = Terminal:new({ cmd = "htop", hidden = true })
 function _HTOP_TOGGLE()
 	htop:toggle()
 end
-
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
