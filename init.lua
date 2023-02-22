@@ -1,5 +1,4 @@
 -- TODO:
--- Null-LS, Linting, etc...
 -- Fix nvim . bug
 
 -- NOTE: Buffer is a file loaded in memory. Windows cointain a buffer (split the editor). A tab is another group of windows/buffers.
@@ -288,10 +287,11 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", { desc = "NvimTree" })
-vim.keymap.set("n", "<leader>f", ":Telescope find_files<cr>", { desc = "Telescope Find Files" })
+vim.keymap.set("n", "<leader>s", ":Telescope find_files<cr>", { desc = "Telescope Find Files (search)" })
 vim.keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<cr>", { desc = "Telescope Live Grep" })
 vim.keymap.set("n", "<leader>q", "<cmd>Bdelete<cr>", { desc = "Close Selected Buffer" })
 vim.keymap.set("n", "<leader>d", "<cmd>Dashboard<cr>", { desc = "Dashboard" })
+vim.keymap.set("n", "<leader>f", "<cmd>lua vim.lsp.buf.format { async = true }<cr>", { desc = "Code Format" })
 
 -- ==================================================================== --
 --                          Plugin Configuration                        --
