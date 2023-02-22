@@ -1,6 +1,4 @@
-
 -- TODO:
--- Config LSP
 -- Null-LS, Linting, etc...
 -- Fix nvim . bug
 
