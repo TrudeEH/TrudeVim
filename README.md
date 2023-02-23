@@ -89,6 +89,18 @@ You need a 64-bit or ARM machine running macOS, Linux or Windows
 ### Installation
 
 * #### macOS
+1. Clone the repository
+```sh
+git clone https://github.com/TrudeEH/TrudeVim/
+```
+2. Get in the TrudeVim directory
+```sh
+cd TrudeVim
+```
+3. Run the install script
+4. ```sh
+5. sh install.sh
+6. ```
 * #### Linux
 * #### Windows
 
