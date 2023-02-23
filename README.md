@@ -68,8 +68,10 @@ This is a great editor you should use if you want to try something new and faste
 
 ### Built With
 
+* ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
 * ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
 * ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
+* ![PowerShell](https://img.shields.io/badge/PowerShell-%235391FE.svg?style=for-the-badge&logo=powershell&logoColor=white)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -78,11 +80,11 @@ This is a great editor you should use if you want to try something new and faste
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This section will telly ou how to get TrudeVim up and running
+This section will telly ou how to get TrudeVim up and running on your machine
 
 ### Prerequisites
 
-You need a 64-bit machine running macOS, Linux or Windows
+You need a 64-bit or ARM machine running macOS, Linux or Windows
 
 ### Installation
 
