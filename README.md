@@ -89,6 +89,7 @@ You need a 64-bit or ARM machine running macOS, Linux or Windows
 ### Installation
 
 * #### macOS
+:warning: You need to have Homebrew and git installed
 1. Clone the repository
 ```sh
 git clone https://github.com/TrudeEH/TrudeVim/
@@ -98,11 +99,28 @@ git clone https://github.com/TrudeEH/TrudeVim/
 cd TrudeVim
 ```
 3. Run the install script
-4. ```sh
-5. sh install.sh
-6. ```
+```sh
+sh install.sh
+```
+
 * #### Linux
+:warning: You need to have Homebrew and git installed
+1. Clone the repository
+```sh
+git clone https://github.com/TrudeEH/TrudeVim/
+```
+2. Get in the TrudeVim directory
+```sh
+cd TrudeVim
+```
+3. Run the install script
+```sh
+sh install.sh
+```
+
 * #### Windows
+1. Open Powershell as Administrator
+2. Run this command:
 
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
