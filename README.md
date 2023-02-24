@@ -118,7 +118,12 @@ sh install.sh
 ```
 
 * #### Windows
-The Windows script is still in progress
+1. Open PowerShell as administrator
+2. Run this command
+```
+Set-ExecutionPolicy Unrestricted ; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/TrudeEH/TrudeVim/main/windows-script.ps1'))
+```
+3. At the first prompt, type ``y`` and press enter. On the next prompts, type ``a`` and press enter
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
