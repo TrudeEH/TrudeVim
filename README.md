@@ -103,7 +103,7 @@ sh install.sh
 ```
 
 * #### Linux
-:warning: You need to have Homebrew and git installed
+:warning: You need to have git installed
 1. Clone the repository
 ```sh
 git clone https://github.com/TrudeEH/TrudeVim/
