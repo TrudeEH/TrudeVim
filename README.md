@@ -57,9 +57,9 @@
 My text editor started to feel heavy, so I decided to move to something new that also improves my productivity.
 
 Here's why you should use TrudeVim:
-* It's super lightweight
+* It's very lightweight
 * Supports syntax highlighting
-* It has a super clean interface
+* It has a clean interface
 
 This is a great editor you should use if you want to try something new and faster.
 
